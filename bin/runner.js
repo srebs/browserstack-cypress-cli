@@ -169,6 +169,11 @@ var argv = yargs
           default: false,
           description: Constants.cliMessages.COMMON.NO_NPM_WARNING,
           type: "boolean"
+        },
+        'reporter-directory': {
+          default: false,
+          type: "string",
+          description: Constants.cliMessages.RUN.REPORTER_DIRECTORY
         }
       })
       .help('help')

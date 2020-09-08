@@ -187,3 +187,9 @@ exports.setLocalIdentifier = (bsConfig) => {
     logger.info("Reading local identifier from the environment variable BROWSERSTACK_LOCAL_IDENTIFIER");
   }
 }
+
+exports.setUserReporter = (bsConfig, args) => {
+  if (!this.isUndefined(args.reporterDirectory)) {
+    bsConfig.run_settings.reporter_directory = args.reporterDirectory
+  }
+}

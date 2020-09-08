@@ -60,7 +60,8 @@ const cliMessages = {
         INFO: "Run your tests on BrowserStack.",
         DESC: "Path to BrowserStack config",
         CONFIG_DEMAND: "config file is required",
-        BUILD_NAME: "The build name you want to use to name your test runs"
+        BUILD_NAME: "The build name you want to use to name your test runs",
+        REPORTER_DIRECTORY: "Relative path to reporter directory"
     },
     COMMON: {
       DISABLE_USAGE_REPORTING: "Disable usage reporting",

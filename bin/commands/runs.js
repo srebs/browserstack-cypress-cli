@@ -32,6 +32,9 @@ module.exports = function run(args) {
     //accept the local identifier from env variable if provided
     utils.setLocalIdentifier(bsConfig);
 
+    // set user provided reporter directory
+    utils.setUserReporter(bsConfig, args);
+
     // Validate browserstack.json values and parallels specified via arguments
     return capabilityHelper.validate(bsConfig, args).then(function (validated) {
       logger.info(validated);

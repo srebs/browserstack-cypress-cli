@@ -67,10 +67,11 @@ const caps = (bsConfig, zip) => {
       obj.callbackURL = bsConfig.run_settings.callback_url;
       obj.projectNotifyURL = bsConfig.run_settings.project_notify_URL;
       obj.parallels = bsConfig.run_settings.parallels;
+      obj.reporter_directory = bsConfig.run_settings.reporter_directory;
     }
 
     if(obj.parallels === Constants.constants.DEFAULT_PARALLEL_MESSAGE) obj.parallels = undefined
-    
+
     if (obj.project) logger.log(`Project name is: ${obj.project}`);
 
     if (obj.customBuildName) logger.log(`Build name is: ${obj.customBuildName}`);
@@ -113,7 +114,7 @@ const validate = (bsConfig, args) => {
       cypressJson = JSON.parse(cypressJson);
       // Cypress Json Base Url & Local true check
       if (!Utils.isUndefined(cypressJson.baseUrl) && cypressJson.baseUrl.includes("localhost") && !Utils.getLocalFlag(bsConfig.connection_settings)) reject(Constants.validationMessages.LOCAL_NOT_SET);
-      
+
       // Detect if the user is not using the right directory structure, and throw an error
       if (!Utils.isUndefined(cypressJson.integrationFolder) && !Utils.isCypressProjDirValid(bsConfig.run_settings.cypress_proj_dir,cypressJson.integrationFolder)) reject(Constants.validationMessages.INCORRECT_DIRECTORY_STRUCTURE);
 
