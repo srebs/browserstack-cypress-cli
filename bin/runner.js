@@ -171,7 +171,6 @@ var argv = yargs
           type: "boolean"
         },
         'reporter-directory': {
-          default: false,
           type: "string",
           description: Constants.cliMessages.RUN.REPORTER_DIRECTORY
         }
